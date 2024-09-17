@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Agricultor</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Detalhes do Agricultor</h1>
+    <div class="card">
+        <div class="card-body">
+            <p><strong>ID:</strong> <span th:text="${agricultor.id}"></span></p>
+            <p><strong>Nome:</strong> <span th:text="${agricultor.nome}"></span></p>
+            <p><strong>Cidade:</strong> <span th:text="${agricultor.cidade}"></span></p>
+            <p><strong>Estado:</strong> <span th:text="${agricultor.estado}"></span></p>
+            <p><strong>Telefone:</strong> <span th:text="${agricultor.telefone}"></span></p>
+            <p><strong>Email:</strong> <span th:text="${agricultor.email}"></span></p>
+        </div>
+    </div>
+    <a href="/agricultores/" class="btn btn-secondary btn-block mt-3">Voltar para a Lista</a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

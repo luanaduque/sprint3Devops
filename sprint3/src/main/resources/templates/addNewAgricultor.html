@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Agricultor</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Adicionar Novo Agricultor</h1>
+    <form th:action="@{/agricultores/save}" th:object="${agricultor}" method="post" class="needs-validation" novalidate>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" th:field="*{nome}" placeholder="Digite o nome" required>
+            <div class="invalid-feedback">Por favor, insira o nome.</div>
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            <input type="text" class="form-control" id="cidade" th:field="*{cidade}" placeholder="Digite a cidade" required>
+            <div class="invalid-feedback">Por favor, insira a cidade.</div>
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado:</label>
+            <input type="text" class="form-control" id="estado" th:field="*{estado}" placeholder="Digite o estado" required>
+            <div class="invalid-feedback">Por favor, insira o estado.</div>
+        </div>
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="text" class="form-control" id="telefone" th:field="*{telefone}" placeholder="Digite o telefone" required>
+            <div class="invalid-feedback">Por favor, insira o telefone.</div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Digite o email" required>
+            <div class="invalid-feedback">Por favor, insira um email válido.</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

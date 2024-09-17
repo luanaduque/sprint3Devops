@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Fazenda</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Detalhes da Fazenda</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Nome Fazenda: <span th:text="${fazenda.nome}">Nome da Fazenda</span></h5>
+            <p class="card-text">Cidade: <span th:text="${fazenda.cidade}">Cidade</span></p>
+            <p class="card-text">Estado: <span th:text="${fazenda.estado}">Estado</span></p>
+            <p class="card-text">Telefone: <span th:text="${fazenda.telefone}">Telefone</span></p>
+            <p class="card-text">Email: <span th:text="${fazenda.email}">Email</span></p>
+            <a href="/fazendas/" class="btn btn-primary">Voltar</a>
+            <a th:href="@{/fazendas/showFormForUpdate/{id}(id=${fazenda.id})}" class="btn btn-warning">Editar</a>
+            <a th:href="@{/fazendas/delete/{id}(id=${fazenda.id})}" class="btn btn-danger">Excluir</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

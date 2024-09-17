@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Fazendas</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Lista de Fazendas</h1>
+    <a href="/fazendas/addNew" class="btn btn-success mb-3">Adicionar Nova Fazenda</a>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nome Fazenda</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="fazenda : ${allFazendaList}">
+            <td th:text="${fazenda.id}">ID</td>
+            <td th:text="${fazenda.nome}">Nome Fazenda</td>
+            <td th:text="${fazenda.cidade}">Cidade</td>
+            <td th:text="${fazenda.estado}">Estado</td>
+            <td th:text="${fazenda.telefone}">Telefone</td>
+            <td th:text="${fazenda.email}">Email</td>
+            <td>
+                <a th:href="@{/fazendas/showFormForUpdate/{id}(id=${fazenda.id})}" class="btn btn-warning btn-sm">Editar</a>
+                <a th:href="@{/fazendas/delete/{id}(id=${fazenda.id})}" class="btn btn-danger btn-sm">Excluir</a>
+                <a th:href="@{/fazendas/show/{id}(id=${fazenda.id})}" class="btn btn-info btn-sm">Ver Detalhes</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
